@@ -4,3 +4,5 @@ dist
 tools
 *.exe
 *.pyc
+Input/
+Output/

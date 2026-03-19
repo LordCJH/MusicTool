@@ -104,7 +104,7 @@ class MainWindow(QMainWindow):
 
         # 文件列表
         self.file_list_widget = QListWidget()
-        self.file_list_widget.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.file_list_widget.setSelectionMode(QAbstractItemView.ExtendedSelection)
         files_layout.addWidget(self.file_list_widget)
 
         main_layout.addWidget(files_group, 1)
@@ -194,7 +194,7 @@ class MainWindow(QMainWindow):
 
     def _on_select_all_changed(self, state):
         """全选状态改变"""
-        if state == Qt.Checked:
+        if self.chk_select_all.isChecked():
             self.file_list_widget.selectAll()
         else:
             self.file_list_widget.clearSelection()
